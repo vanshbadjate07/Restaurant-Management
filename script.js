@@ -193,16 +193,16 @@ function addMessage(message, isUser = false) {
 }
 
 const chatbotResponses = {
-    best_starter: "Our Spring Rolls are highly recommended as a starter. They're crispy, fresh, and come with a delicious dipping sauce.",
-    dessert_options: "We have a variety of desserts including Gulab Jamun, Ice Cream, and our special Chocolate Brownie.",
-    special_dish: "Our special dish is the authentic Misal - a spicy curry served with pav bread. It's a local favorite!",
-    south_indian: "We serve classic South Indian dishes like Dosa, Medu Vada, and Filter Coffee. All made with authentic recipes.",
+    best_starter: "Our best starter dish is Paneer Tikka—a flavorful and smoky grilled paneer marinated in spices. However, if you love street food, Vada Pav is also a must-try!",
+    dessert_options: "We serve a variety of delicious desserts, including Gulab Jamun, Rasgulla, Kaju Katli, and Gajar ka Halwa. Perfect to satisfy your sweet cravings!",
+    special_dish: "Our special dish is Paneer Butter Masala, a rich and creamy paneer curry loved by our customers. If you enjoy a spicy kick, you should also try Misal!",
+    south_indian: "We offer authentic South Indian delights like Dosa, Idli, Medu Vada, and Uttapam. Served with flavorful chutneys and sambar!",
     payment_methods: "We accept all major credit/debit cards, UPI payments, and cash.",
-    spicy_dishes: "Misal and some of our South Indian dishes are spicy. Please let us know if you prefer less spicy options.",
-    veg_options: "Yes, we have many vegetarian options including South Indian dishes, Pizza, and various starters.",
-    delivery: "Yes, we provide home delivery within a 5km radius. Please call our delivery number for details.",
-    allergies: "Please inform our staff about any allergies. We take food allergies seriously and can customize dishes accordingly.",
-    waiting_time: "During peak hours, the average waiting time is 15-20 minutes. Off-peak hours usually have minimal wait times."
+    spicy_dishes: "If you love spicy food, we recommend trying Misal—a fiery Maharashtrian dish, and Chole Bhature, which has a rich and flavorful spice blend!",
+    veg_options: "Yes! Our entire menu is pure vegetarian, offering delicious options from starters to desserts.",
+    delivery: "Yes, we do! You can order online and get your food delivered to your doorstep. Contact us for more details.",
+    allergies: "We take food allergies seriously. Please inform our staff about any allergies, and we’ll ensure that your food is prepared with utmost care.",
+    waiting_time: "Our average waiting time is around 15-20 minutes, depending on the order size. We strive to serve you fresh and delicious food as quickly as possible!"
 };
 
 function handleQuestionSelect() {
