@@ -247,6 +247,10 @@
     <div class="chatbot-container" id="chatbot">
         <div class="chatbot-header">
             <h3>Restaurant Assistant</h3>
+            <div class="language-selector">
+                <button onclick="changeLanguage('en')" class="lang-btn active" id="en-btn">English</button>
+                <button onclick="changeLanguage('mr')" class="lang-btn" id="mr-btn">मराठी</button>
+            </div>
             <button onclick="toggleChat()" class="close-btn">&times;</button>
         </div>
         <div class="chatbot-messages" id="chatMessages"></div>

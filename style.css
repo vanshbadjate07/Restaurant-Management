@@ -123,14 +123,15 @@ body {
   z-index: 100;
 }
 
-.menu-btn{
-    position: fixed;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    bottom: 20px;
+.menu-btn {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 17px;
 }
-.menu-btn button{
-    margin-top: 20px;
+
+.menu-btn button {
+  margin-top: 20px;
 }
 
 button {
@@ -165,12 +166,12 @@ button:hover {
 
 @keyframes slideIn {
   from {
-    transform: translateX(100%);
-    opacity: 0;
+      transform: translateX(100%);
+      opacity: 0;
   }
   to {
-    transform: translateX(0);
-    opacity: 1;
+      transform: translateX(0);
+      opacity: 1;
   }
 }
 
@@ -258,13 +259,35 @@ button:hover {
 }
 
 .chatbot-header {
-  padding: 15px;
+  padding: 10px 15px;
   background-color: #2c3e50;
   color: white;
   border-radius: 10px 10px 0 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.language-selector {
+  display: flex;
+  gap: 8px;
+  margin: 0 15px;
+}
+
+.lang-btn {
+  padding: 4px 8px;
+  font-size: 12px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lang-btn.active {
+  background-color: white;
+  color: #2c3e50;
 }
 
 .close-btn {
@@ -312,7 +335,7 @@ button:hover {
 
 .bot-message {
   background-color: #2c3e50;
-  color: #2c3e50;
+  color: white;
 }
 
 .table-selection {
@@ -344,9 +367,10 @@ button:hover {
   color: #2c3e50;
   margin: 20px 0;
 }
-.user-message{
+
+.bot-message{
   color: white;
 }
-.bot-message{
+.user-message{
   color: white;
 }
