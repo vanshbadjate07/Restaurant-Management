@@ -40,7 +40,6 @@ function loadSavedItems() {
     const savedItems = JSON.parse(localStorage.getItem('orderItems') || '{}');
     orderItems = savedItems;
 
-    // Update quantity displays for all items
     for (const [item, details] of Object.entries(orderItems)) {
         const quantityElement = document.getElementById(`${item}-quantity`);
         if (quantityElement) {
@@ -48,7 +47,6 @@ function loadSavedItems() {
         }
     }
 
-    // Update the order display
     updateOrderDisplay();
 }
 
@@ -176,7 +174,6 @@ function placeOrder() {
         });
 }
 
-// Chatbot functionality
 function toggleChat() {
     const chatbot = document.getElementById('chatbot');
     if (chatbot) {
