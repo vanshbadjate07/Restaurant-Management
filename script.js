@@ -125,17 +125,13 @@ function loadBill() {
 
 function sendOrderEmail(orderDetails) {
     const templateParams = {
-        to_email: 'badjatevansh1008@gmail.com',
+        to_email: 'dawangeshruti29@gmail.com',
         table_number: orderDetails.tableNumber,
         order_items: orderDetails.items,
-        total_amount: orderDetails.total
+        total_amount: `₹${orderDetails.total}`
     };
 
-    return emailjs.send(
-        'service_6t7pcpg',
-        'template_1j3djsh',
-        templateParams
-    );
+    return emailjs.send('service_95rjb4k', 'template_gzyotff', templateParams);
 }
 
 function placeOrder() {
@@ -143,10 +139,14 @@ function placeOrder() {
     const orderDetails = JSON.parse(localStorage.getItem('orderItems'));
     const totalAmount = localStorage.getItem('total');
 
-    let orderItemsList = '';
-    for (const [item, details] of Object.entries(orderDetails)) {
-        orderItemsList += `${item} x${details.quantity}\n`;
+    if (!tableNumber || !orderDetails || !totalAmount) {
+        showNotification('Order details are missing. Please try again.');
+        return;
     }
+
+    let orderItemsList = Object.entries(orderDetails)
+        .map(([item, details]) => `${item} x${details.quantity} - ₹${details.quantity * details.price}`)
+        .join('\n'); 
 
     const emailOrderDetails = {
         tableNumber: tableNumber,
@@ -157,13 +157,12 @@ function placeOrder() {
     sendOrderEmail(emailOrderDetails)
         .then(() => {
             showNotification('Order placed successfully! Email notification sent.');
-            
-            // Clear the order data
+
+            // Clear stored order data
             localStorage.removeItem('orderItems');
             localStorage.removeItem('total');
             localStorage.removeItem('tableNumber');
-            
-            // Redirect after a short delay
+
             setTimeout(() => {
                 window.location.href = 'index.html';
             }, 2000);
@@ -173,6 +172,8 @@ function placeOrder() {
             showNotification('Error placing order. Please try again.');
         });
 }
+
+
 
 function toggleChat() {
     const chatbot = document.getElementById('chatbot');
@@ -216,17 +217,15 @@ function handleQuestionSelect() {
             setTimeout(() => {
                 addMessage(chatbotResponses[selectedValue], false);
             }, 500);
-            select.value = ""; // Reset select
+            select.value = "";
         }
     }
 }
 
-// Category filtering
 function filterCategory(category) {
     const menuItems = document.querySelectorAll('.menu-item');
     const buttons = document.querySelectorAll('.category-btn');
 
-    // Update active button
     buttons.forEach(btn => {
         btn.classList.remove('active');
         if (btn.textContent.toLowerCase() === category || 
@@ -235,7 +234,6 @@ function filterCategory(category) {
         }
     });
 
-    // Filter items
     menuItems.forEach(item => {
         if (category === 'all' || item.dataset.category === category) {
             item.style.display = 'block';
@@ -245,16 +243,12 @@ function filterCategory(category) {
     });
 }
 
-// Initialize page-specific elements
 document.addEventListener('DOMContentLoaded', function() {
     updateTableInfo();
 
-    // Load saved items if we're on the menu page
     if (window.location.pathname.endsWith('menu.html')) {
         loadSavedItems();
     }
-
-    // Load bill if we're on the bill page
     if (window.location.pathname.endsWith('bill.html')) {
         loadBill();
     }
