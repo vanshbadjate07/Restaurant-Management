@@ -301,7 +301,7 @@ button:hover {
 }
 
 .bot-message {
-    background-color: #f0f0f0;
+    background-color: #2c3e50;
     color: #2c3e50;
 }
 
@@ -325,12 +325,12 @@ button:hover {
 
 .navigation {
     font-size: 1.5rem;
-    color: #2c3e50;
+    color: #ffffff;
     margin: 20px 0;
 }
 
 .message {
     font-size: 1.2rem;
-    color: #2c3e50;
+    color: #f8f8f8;
     margin: 20px 0;
 }
