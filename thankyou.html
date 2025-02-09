@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("NMKqqT6nFxLUVacDc");
+        })();
+    </script>
+</head>
+<body class="welcome-container">
+    <div class="container">
+        <h1 class="title">Thank You!</h1>
+        <p class="message">We hope you enjoyed your meal. Come again!</p>
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5" alt="Thank You" style="display: block; margin: 20px auto; width: 200px; height: auto; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <p class="message">📧 Click PLACE ORDER to confirm your order and send an email confirmation.</p>
+        <div class="buttons">
+            <button onclick="goToPage('bill.html')">Previous</button>
+            <button onclick="placeOrder()">PLACE ORDER</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

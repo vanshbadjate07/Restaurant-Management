@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="welcome-container">
+    <div class="container">
+        <h1 class="title">Food Menu</h1>
+        <div id="tableInfo" class="table-info"></div>
+        <div class="order-summary">
+            <h3>Current Order</h3>
+            <div id="currentOrder"></div>
+            <p>Total: ₹<span id="orderTotal">0</span></p>
+        </div>
+
+        <!-- Category Navigation -->
+        <div class="category-nav">
+            <button class="category-btn active" onclick="filterCategory('all')">All</button>
+            <button class="category-btn" onclick="filterCategory('starters')">Starters</button>
+            <button class="category-btn" onclick="filterCategory('mains')">Main Course</button>
+            <button class="category-btn" onclick="filterCategory('southIndian')">South Indian</button>
+            <button class="category-btn" onclick="filterCategory('desserts')">Desserts</button>
+            <button class="category-btn" onclick="filterCategory('beverages')">Beverages</button>
+        </div>
+
+        <div class="menu">
+            <!-- Starters -->
+            <div class="menu-item" data-category="starters">
+                <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58" alt="Spring Rolls" />
+                <p>Spring Rolls - ₹120</p>
+                <div class="quantity-controls">
+                    <button onclick="decreaseQuantity('Spring Rolls')">-</button>
+                    <span id="Spring Rolls-quantity">0</span>
+                    <button onclick="increaseQuantity('Spring Rolls', 120)">+</button>
+                </div>
+            </div>
+
+            <!-- Main Course -->
+            <div class="menu-item" data-category="mains">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" alt="Pizza" />
+                <p>Pizza - ₹250</p>
+                <div class="quantity-controls">
+                    <button onclick="decreaseQuantity('Pizza')">-</button>
+                    <span id="Pizza-quantity">0</span>
+                    <button onclick="increaseQuantity('Pizza', 250)">+</button>
+                </div>
+            </div>
+
+            <!-- South Indian -->
+            <div class="menu-item" data-category="southIndian">
+                <img src="https://images.unsplash.com/photo-1630383249896-424e482df921" alt="Dosa" />
+                <p>Dosa - ₹100</p>
+                <div class="quantity-controls">
+                    <button onclick="decreaseQuantity('Dosa')">-</button>
+                    <span id="Dosa-quantity">0</span>
+                    <button onclick="increaseQuantity('Dosa', 100)">+</button>
+                </div>
+            </div>
+
+            <!-- Beverages -->
+            <div class="menu-item" data-category="beverages">
+                <img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd" alt="Filter Coffee" />
+                <p>Filter Coffee - ₹40</p>
+                <div class="quantity-controls">
+                    <button onclick="decreaseQuantity('Filter Coffee')">-</button>
+                    <span id="Filter Coffee-quantity">0</span>
+                    <button onclick="increaseQuantity('Filter Coffee', 40)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button onclick="goToPage('index.html')">Previous</button>
+            <button onclick="proceedToBill()">Next</button>
+        </div>
+    </div>
+
+    <!-- Chatbot -->
+    <div class="chatbot-icon" onclick="toggleChat()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+    </div>
+
+    <div class="chatbot-container" id="chatbot">
+        <div class="chatbot-header">
+            <h3>Restaurant Assistant</h3>
+            <button onclick="toggleChat()" class="close-btn">&times;</button>
+        </div>
+        <div class="chatbot-messages" id="chatMessages"></div>
+        <div class="chatbot-input">
+            <select id="questionSelect" onchange="handleQuestionSelect()">
+                <option value="">Select a question...</option>
+                <option value="best_starter">What is the best starter dish?</option>
+                <option value="dessert_options">What desserts do you have?</option>
+                <option value="special_dish">What is your special dish?</option>
+                <option value="south_indian">What South Indian dishes do you serve?</option>
+                <option value="payment_methods">What payment methods do you accept?</option>
+                <option value="spicy_dishes">Which dishes are spicy?</option>
+                <option value="veg_options">Do you have vegetarian options?</option>
+                <option value="delivery">Do you provide home delivery?</option>
+                <option value="allergies">How do you handle food allergies?</option>
+                <option value="waiting_time">What's the average waiting time?</option>
+            </select>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
